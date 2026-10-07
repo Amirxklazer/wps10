@@ -21,7 +21,8 @@ CXXFLAGS := $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++17
 ASFLAGS  := -g $(ARCH)
 LDFLAGS  = -specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
 
-LIBS     := -lnx
+LIBS     := -lSDL2_ttf -lSDL2_image -lSDL2_gfx -lSDL2 \
+            -lfreetype -lpng -ljpeg -lwebp -lz -lbz2 -lnx
 LIBDIRS  := $(PORTLIBS) $(LIBNX)
 
 ifneq ($(BUILD),$(notdir $(CURDIR)))
